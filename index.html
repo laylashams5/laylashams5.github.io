@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>كتب تفاعلية ثلاثية الأبعاد · أعمال</title>
+<meta name="description" content="منيو مقهى وكتب تلوين ثلاثية الأبعاد تُقلَّب وتُلوَّن على الجوال من رابط أو QR، بلا تطبيق.">
+<meta property="og:title" content="كتب تفاعلية ثلاثية الأبعاد">
+<meta property="og:description" content="منيو مقهى وكتب تلوين ثلاثية الأبعاد تعمل على الجوال بلا تطبيق.">
+<meta property="og:image" content="https://laylashams5.github.io/img/share.webp">
+<meta name="theme-color" content="#f5efe6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5efe6;--surface:#fffaf3;--ink:#1f1a24;--muted:#6b6470;--line:#e4dbcf;
+  --doo:#3b0f55;--doo-2:#f08a3c;--d7:#3a2b22;--d7-2:#b8683d;
+  --r:22px;--gut:clamp(16px,5vw,64px);--max:1200px;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.75 "IBM Plex Sans Arabic",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,.btn,.tag,.eyebrow,.num{font-family:Alexandria,sans-serif}
+a{color:inherit}
+img,video{display:block;max-width:100%}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--gut)}
+.skip{position:absolute;inset-inline-start:-999px}.skip:focus{inset-inline-start:16px;top:16px;background:var(--ink);color:#fff;padding:8px 14px;border-radius:10px;z-index:9}
+
+/* nav */
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .3s}
+nav.scrolled{border-color:var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.mark{font:800 18px Alexandria;text-decoration:none;display:flex;align-items:center;gap:10px}
+.mark i{width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,var(--doo) 0 50%,var(--doo-2) 50%);display:block;transform:rotate(-8deg)}
+nav ul{display:flex;gap:24px;list-style:none;padding:0;font:500 15px Alexandria}
+nav ul a{text-decoration:none;color:var(--muted);background:linear-gradient(currentColor,currentColor) 100% 100%/0 1.5px no-repeat;transition:background-size .3s,color .2s}
+nav ul a:hover{color:var(--ink);background-size:100% 1.5px}
+@media (max-width:720px){nav ul{display:none}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:999px;font-weight:700;font-size:16px;text-decoration:none;background:var(--ink);color:#fff;transition:transform .18s,box-shadow .18s,background .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px -10px #0006}
+.btn:active{transform:translateY(0) scale(.97)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn svg{width:18px;height:18px}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--doo-2);outline-offset:3px}
+
+/* hero */
+.hero{overflow-x:clip;min-height:calc(100svh - 64px);display:grid;align-items:center;padding-block:40px 56px}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .95fr;gap:48px;align-items:center}
+.eyebrow{font-size:14px;font-weight:500;color:var(--muted);letter-spacing:.02em;margin-bottom:18px}
+h1{font-weight:800;font-size:clamp(34px,4.4vw,60px);line-height:1.2;letter-spacing:-.01em;text-wrap:balance}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--doo-2),#e0457b 60%,var(--doo));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:clamp(17px,1.5vw,20px);color:var(--muted);max-width:30em;margin-top:22px}
+.facts{display:flex;gap:28px;margin-top:30px;flex-wrap:wrap}
+.facts div{font:700 28px Alexandria}.facts span{display:block;font:400 14px "IBM Plex Sans Arabic";color:var(--muted)}
+.cta{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
+.fan{position:relative;height:min(72svh,640px);display:flex;justify-content:center;align-items:center}
+.fan .phone{position:absolute;width:min(44%,250px)}
+.fan .phone:nth-child(1){transform:translateX(62%) rotate(7deg) translateY(18px)}
+.fan .phone:nth-child(2){z-index:2}
+.fan .phone:nth-child(3){transform:translateX(-62%) rotate(-7deg) translateY(18px)}
+
+/* phone frame */
+.phone{aspect-ratio:1/2;border-radius:34px;padding:8px;background:#141017;box-shadow:0 30px 60px -28px #2a1a3399,0 2px 0 #fff3 inset;position:relative}
+.phone>img,.phone>video{width:100%;height:100%;object-fit:cover;border-radius:27px;background:#ddd}
+a.phone{transition:transform .25s}
+a.phone:hover{transform:translateY(-2px)}
+
+/* project sections */
+section.proj{padding-block:clamp(72px,10vw,120px);border-top:1px solid var(--line)}
+.proj .head{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:48px}
+.num{font-size:14px;color:var(--muted);font-weight:500;margin-bottom:12px}
+h2{font-weight:800;font-size:clamp(30px,4vw,50px);line-height:1.2;text-wrap:balance}
+.proj .head p{color:var(--muted);font-size:18px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.tag{font-size:13px;font-weight:500;padding:6px 12px;border-radius:999px;background:var(--surface);border:1px solid var(--line)}
+.shots{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,2vw,28px);align-items:start}
+.shots .phone:nth-child(even){margin-top:48px}
+.three .shots{grid-template-columns:repeat(3,1fr);max-width:900px;margin-inline:auto}
+.detail{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;margin-top:56px;align-items:start}
+.detail ul{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:18px 32px}
+.detail li{padding-top:14px;border-top:2px solid var(--ink)}
+.detail li b{display:block;font:700 17px Alexandria;margin-bottom:4px}
+.detail li{color:var(--muted);font-size:15.5px;line-height:1.65}
+.detail .links{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.note{font-size:14px;color:var(--muted);margin-top:6px}
+
+.doo .tag{border-color:#3b0f5522}.doo .btn{background:var(--doo)}
+.doo .detail li{border-color:var(--doo)}
+.d7{background:#efe5d8}.d7 .btn{background:var(--d7)}.d7 .detail li{border-color:var(--d7-2)}
+.d7 .tag{background:#f8f1e7}
+
+/* process */
+.process{padding-block:clamp(72px,10vw,120px);background:var(--ink);color:#f5efe6}
+.process h2{max-width:14em}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:56px;counter-reset:s}
+.steps div{padding:26px;border-radius:var(--r);background:#2b2431;transition:transform .25s,background .25s}
+.steps div:hover{transform:translateY(-2px);background:#332a3a}
+.steps div::before{counter-increment:s;content:counter(s,arabic-indic);display:block;font:800 40px Alexandria;color:var(--doo-2);margin-bottom:12px}
+.steps b{display:block;font:700 19px Alexandria;margin-bottom:8px}
+.steps p{color:#c9bfcf;font-size:15.5px}
+
+/* close */
+.close{min-height:70svh;display:grid;place-items:center;text-align:center;padding-block:96px}
+.close h2{font-size:clamp(34px,5vw,64px);max-width:13em;margin-inline:auto}
+.close .cta{justify-content:center}
+footer{border-top:1px solid var(--line);padding-block:28px;font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* entrance */
+@media (prefers-reduced-motion:no-preference){
+  [data-enter]>*{animation:up .8s cubic-bezier(.2,.7,.2,1) both}
+  [data-enter]>*:nth-child(2){animation-delay:.12s}
+  .fan .phone{animation:rise 1s cubic-bezier(.2,.7,.2,1) both}
+  .fan .phone:nth-child(1){animation-delay:.25s}.fan .phone:nth-child(3){animation-delay:.35s}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+}
+@keyframes up{from{opacity:0;transform:translateY(22px)}}
+@keyframes rise{from{opacity:0;translate:0 60px}}
+
+@media (max-width:960px){
+  .hero .wrap,.proj .head,.detail{grid-template-columns:1fr}
+  .hero{min-height:auto}
+  .fan{height:520px}
+  .steps{grid-template-columns:1fr 1fr}
+  .shots{grid-template-columns:repeat(2,1fr)}
+  .three .shots{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:560px){
+  .fan{height:430px}
+  .fan .phone{width:46%}
+  .detail ul,.steps{grid-template-columns:1fr}
+  .shots .phone:nth-child(even){margin-top:32px}
+}
+</style>
+</head>
+<body>
+<!-- Page: service portfolio · palette from the two clients (DoO purple/orange, D7 coffee) · moment: scroll reveal of phone shots -->
+<a class="skip" href="#main">تخطَّ إلى المحتوى</a>
+<nav id="nav"><div class="wrap">
+  <a class="mark" href="#top"><i></i>كتب تفاعلية</a>
+  <ul><li><a href="#friends">ألغاز دوو</a></li><li><a href="#d7">منيو District 7</a></li><li><a href="#childhood">العودة للطفولة</a></li><li><a href="#how">طريقة العمل</a></li></ul>
+</div></nav>
+
+<main id="main">
+<section class="hero" id="top"><div class="wrap">
+  <div data-enter>
+    <div>
+      <p class="eyebrow">أعمال مختارة · تصميم وتطوير</p>
+      <h1>كتب ومنيوهات <em>ثلاثية الأبعاد</em> تُقلَّب على الجوال</h1>
+      <p class="lead">أحوّل ملف PDF أو صور المنتجات إلى كتاب حيّ: يقلّبه الزائر بإصبعه، ويلوّن صفحاته، ويدير المنتجات بيده. يفتح من رابط أو QR، بلا تطبيق.</p>
+      <div class="facts"><div>٣<span>مشاريع منشورة</span></div><div>١١<span>لغزاً قابلاً للحلّ</span></div><div>٠<span>تطبيقات للتحميل</span></div></div>
+      <div class="cta"><a class="btn" href="#friends">شاهد الأعمال</a><a class="btn ghost" href="https://laylashams5.github.io/doo-childhood/friends/" target="_blank" rel="noopener">جرّب كتاباً الآن</a></div>
+    </div>
+  </div>
+  <div class="fan" aria-hidden="true">
+    <div class="phone"><img src="img/d7-cover.webp" alt="" width="585" height="1170"></div>
+    <div class="phone"><img src="img/friends-revealed.webp" alt="" width="585" height="1170"></div>
+    <div class="phone"><img src="img/childhood-colored.webp" alt="" width="585" height="1170"></div>
+  </div>
+</div></section>
+
+<section class="proj doo" id="friends"><div class="wrap">
+  <div class="head reveal">
+    <div><p class="num">٠١ · ورش DoO</p><h2>ألغاز دوو الملوّنة: لوّن واكشف الشخصية</h2></div>
+    <div><p>كتاب تلوين بالأرقام لشخصيات دوو الخاصة. كل صفحة لغز؛ لا تعرف من يختبئ فيها حتى تكتمل الألوان، ثم تقفز الشخصية مجسّمة من الورق.</p>
+    <div class="tags"><span class="tag">١١ لغزاً</span><span class="tag">تلوين باللمس</span><span class="tag">كشف مجسّم</span><span class="tag">موسيقى خاصة</span><span class="tag">فيديو ترويجي</span></div></div>
+  </div>
+  <div class="shots">
+    <a class="phone reveal" href="https://laylashams5.github.io/doo-childhood/friends/" target="_blank" rel="noopener" aria-label="غلاف ألغاز دوو"><img src="img/friends-cover.webp" alt="غلاف كتاب ألغاز دوو الملوّنة على الجوال" loading="lazy" width="585" height="1170"></a>
+    <div class="phone reveal"><img src="img/friends-rules.webp" alt="صفحة طريقة اللعب بشبكة الأرقام" loading="lazy" width="585" height="1170"></div>
+    <div class="phone reveal"><video src="img/teaser-sm.mp4" poster="img/teaser.jpg" muted loop playsinline autoplay preload="none" aria-label="ستوري تشويقي لصفحة تتلوّن تدريجياً"></video></div>
+    <div class="phone reveal"><img src="img/friends-revealed.webp" alt="شخصية فرشو تظهر مجسّمة بعد حلّ اللغز" loading="lazy" width="585" height="1170"></div>
+  </div>
+  <div class="detail reveal">
+    <ul>
+      <li><b>من PDF إلى لغز</b>قرأت أرقام كل منطقة من ملف الطباعة وطابقتها مع الحلّ، فصار كل لغز قابلاً للحلّ على الشاشة.</li>
+      <li><b>الكشف يكافئ</b>عند اكتمال اللون تبرز الشخصية بعمق حقيقي وقصاصات احتفال.</li>
+      <li><b>يحفظ التقدّم</b>يكمل الطفل لغزه لاحقاً من حيث توقّف، ويحفظ رسمته صورة.</li>
+      <li><b>محتوى للنشر</b>فيديو تيك توك وستوري تشويقي من الموقع نفسه، بقياس ١٠٨٠×١٩٢٠.</li>
+    </ul>
+    <div class="links"><a class="btn" href="https://laylashams5.github.io/doo-childhood/friends/" target="_blank" rel="noopener">افتح الكتاب
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></a></div>
+  </div>
+</div></section>
+
+<section class="proj d7" id="d7"><div class="wrap three">
+  <div class="head reveal">
+    <div><p class="num">٠٢ · مقهى قهوة مختصة</p><h2>منيو <bdi>District 7</bdi>: المس الكوب لتديره</h2></div>
+    <div><p>منيو على شكل كتاب جلدي يُفتح على الطاولة من QR. صور المشروبات مقصوصة ومجسّمة، يديرها الزبون بإصبعه، ويجمع طلبه في سلّة قبل أن ينادي الباريستا.</p>
+    <div class="tags"><span class="tag">٤ أقسام</span><span class="tag">منتجات مجسّمة</span><span class="tag">سلّة طلب</span><span class="tag">QR للطاولة</span></div></div>
+  </div>
+  <div class="shots">
+    <a class="phone reveal" href="https://laylashams5.github.io/district7-menu/" target="_blank" rel="noopener" aria-label="غلاف منيو District 7"><img src="img/d7-cover.webp" alt="غلاف منيو District 7 الجلدي" loading="lazy" width="585" height="1170"></a>
+    <div class="phone reveal"><img src="img/d7-v60.webp" alt="صفحة V60 مع حبوب قهوة متطايرة" loading="lazy" width="585" height="1170"></div>
+    <div class="phone reveal"><img src="img/d7-karak.webp" alt="صفحة كرك أولد سكول" loading="lazy" width="585" height="1170"></div>
+  </div>
+  <div class="detail reveal">
+    <ul>
+      <li><b>صور حقيقية مجسّمة</b>قصصت صور المقهى وأعطيتها عمقاً، فيبرز الكوب من الصفحة.</li>
+      <li><b>تفاصيل لكل مشروب</b>حبوب قهوة، أعواد قرفة، ومكعبات ثلج تتحرك حول المنتج.</li>
+      <li><b>طلب أسهل</b>يضيف الزبون مشروباته ويعرضها على الباريستا من شاشته.</li>
+      <li><b>خفيف على الجوال</b>يضبط جودة الرسم حسب الجهاز ليبقى التقليب سلساً.</li>
+    </ul>
+    <div class="links"><a class="btn" href="https://laylashams5.github.io/district7-menu/" target="_blank" rel="noopener">افتح المنيو
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></a>
+      <p class="note">مشروع تجريبي (concept) لمقهى District 7.</p></div>
+  </div>
+</div></section>
+
+<section class="proj doo" id="childhood"><div class="wrap three">
+  <div class="head reveal">
+    <div><p class="num">٠٣ · ورش DoO</p><h2>العودة للطفولة: كتاب تلوين بطبقات بارزة</h2></div>
+    <div><p>كتاب تلوين للكبار يعيد رسوم كرتون الطفولة. يختار الزائر لونه ويلمس المنطقة، فتنتفخ الطبقة الملوّنة وتبرز عن الصفحة.</p>
+    <div class="tags"><span class="tag">١١ صفحة</span><span class="tag">طبقات بعمق</span><span class="tag">موسيقى حنين</span></div></div>
+  </div>
+  <div class="shots">
+    <a class="phone reveal" href="https://laylashams5.github.io/doo-childhood/" target="_blank" rel="noopener" aria-label="غلاف العودة للطفولة"><img src="img/childhood-cover.webp" alt="غلاف كتاب العودة للطفولة" loading="lazy" width="585" height="1170"></a>
+    <div class="phone reveal"><img src="img/childhood-line.webp" alt="صفحة بخطوط التلوين قبل البدء" loading="lazy" width="585" height="1170"></div>
+    <div class="phone reveal"><img src="img/childhood-colored.webp" alt="الصفحة نفسها بعد التلوين بطبقات بارزة" loading="lazy" width="585" height="1170"></div>
+  </div>
+  <div class="detail reveal">
+    <ul>
+      <li><b>كل منطقة طبقة</b>قسّمت الرسمة إلى مناطق، ولكل منطقة ارتفاع يبرز بعد تلوينها.</li>
+      <li><b>اقترب ودوّر</b>وضع «تأمّل» يقرّب الصفحة ويدوّرها لرؤية العمق.</li>
+    </ul>
+    <div class="links"><a class="btn" href="https://laylashams5.github.io/doo-childhood/" target="_blank" rel="noopener">افتح الكتاب
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></a></div>
+  </div>
+</div></section>
+
+<section class="process" id="how"><div class="wrap">
+  <h2 class="reveal">من ملفك إلى كتاب حيّ في أربع خطوات</h2>
+  <div class="steps">
+    <div class="reveal"><b>ترسل الملف</b><p>PDF للطباعة، أو صور المنتجات والأسعار.</p></div>
+    <div class="reveal"><b>أفصل الطبقات</b><p>أقصّ الصور وأقرأ مناطق الرسم وأحسب عمق كل جزء.</p></div>
+    <div class="reveal"><b>أبني الكتاب</b><p>صفحات تُقلَّب وتُلوَّن، بألوان هويتك وموسيقاها.</p></div>
+    <div class="reveal"><b>تنشر الرابط</b><p>رابط مجاني ورمز QR للطاولة أو للورشة، وفيديو للسوشال.</p></div>
+  </div>
+</div></section>
+
+<section class="close"><div class="wrap reveal">
+  <h2>جرّب الكتب بنفسك على جوالك</h2>
+  <div class="cta"><a class="btn" href="https://laylashams5.github.io/doo-childhood/friends/" target="_blank" rel="noopener">ألغاز دوو</a><a class="btn ghost" href="https://laylashams5.github.io/district7-menu/" target="_blank" rel="noopener">منيو District 7</a></div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span>كتب تفاعلية ثلاثية الأبعاد · ٢٠٢٦</span><a href="https://github.com/laylashams5" target="_blank" rel="noopener">GitHub</a></div></footer>
+
+<script>
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>8),{passive:true});
+const els=[...document.querySelectorAll('.reveal')];
+els.forEach(el=>{const g=el.closest('.shots,.steps');el.style.transitionDelay=(g?[...el.parentNode.children].indexOf(el)*90:0)+'ms'});
+function show(){const h=innerHeight*.9;for(const el of els)if(!el.classList.contains('in')&&el.getBoundingClientRect().top<h)el.classList.add('in')}
+addEventListener('scroll',show,{passive:true});addEventListener('resize',show);show();
+const v=document.querySelector('video');
+if(v){new IntersectionObserver(([e])=>{if(e.isIntersecting){v.preload='auto';v.play().catch(()=>{})}else v.pause()}).observe(v)}
+</script>
+</body>
+</html>
