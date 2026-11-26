@@ -136,6 +136,83 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .detail ul,.steps{grid-template-columns:1fr}
   .shots .phone:nth-child(even){margin-top:32px}
 }
+
+/* ---- young & elegant layer ---- */
+:root{--bg:#fbf7f2;--ink:#1c1426;--muted:#6f6577;--pink:#ff5d8f;--sun:#ffd451;--mint:#8fe3c8;--lilac:#efe6fb;--latte:#f1e6d8;--peach:#ffeadf}
+body{background:var(--bg)}
+nav{background:color-mix(in srgb,var(--bg) 80%,transparent)}
+nav ul a{padding:6px 12px;border-radius:999px;background:none;transition:background .2s,color .2s}
+nav ul a:hover{background:#fff;color:var(--ink)}
+.hero{position:relative;isolation:isolate}
+.blobs{position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.blobs i{position:absolute;border-radius:50%;filter:blur(70px);opacity:.45}
+.blobs i:nth-child(1){width:420px;height:420px;background:var(--doo-2);left:4%;top:8%}
+.blobs i:nth-child(2){width:360px;height:360px;background:var(--pink);left:26%;top:44%;opacity:.3}
+.blobs i:nth-child(3){width:380px;height:380px;background:#9b6dff;right:-6%;bottom:-8%;opacity:.22}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 16px;border-radius:999px;background:#fff;color:var(--ink);box-shadow:0 6px 20px -12px #3b0f5566}
+.eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--pink);box-shadow:0 0 0 4px #ff5d8f2a}
+h1{letter-spacing:-.02em}
+.facts div{background:#ffffffb0;border-radius:20px;padding:12px 18px;backdrop-filter:blur(6px)}
+.btn{background:linear-gradient(135deg,#2a0f40,#5b1f7a)}
+.hero .btn:not(.ghost){background:linear-gradient(135deg,var(--doo-2),var(--pink))}
+.btn.ghost{background:#ffffff90;box-shadow:inset 0 0 0 1.5px var(--ink)}
+.fan .phone:nth-child(2){box-shadow:0 40px 80px -30px #ff5d8f88,0 2px 0 #fff3 inset}
+
+/* marquee */
+.mqw{overflow:hidden;padding-block:18px 6px}
+.mq{width:calc(100% + 60px);margin-inline:-30px!important;overflow:hidden;background:var(--ink);color:#fff;padding:16px 0;transform:rotate(-1.6deg);direction:ltr}
+.track{display:flex;gap:28px;width:max-content;font:800 clamp(20px,2.6vw,32px) Alexandria;white-space:nowrap}
+.track b{color:var(--sun);font-weight:400}
+.track span:nth-of-type(3n+2){color:var(--mint)}
+@media (prefers-reduced-motion:no-preference){.track{animation:mq 30s linear infinite}}
+@keyframes mq{to{transform:translateX(-50%)}}
+body{overflow-x:clip}
+
+/* project cards */
+section.proj{border-top:0;padding:clamp(14px,2.4vw,28px) var(--gut)}
+section.proj>.wrap{padding:clamp(28px,5vw,72px);border-radius:clamp(30px,4vw,52px);background:var(--lilac);position:relative;overflow:hidden}
+.d7{background:transparent}
+.d7>.wrap{background:var(--latte)!important}
+.kid>.wrap{background:var(--peach)!important}
+.num{display:inline-block;padding:6px 14px;border-radius:999px;background:#fff;color:var(--ink);font-weight:700}
+.doo .num{color:var(--doo)}.d7 .num{color:var(--d7-2)}.kid .num{color:#d2541c}
+.tag{background:#fff;border:0;display:inline-flex;align-items:center;gap:7px;padding:7px 14px;box-shadow:0 4px 14px -10px #0004}
+.tag::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--doo-2)}
+.tag:nth-child(3n+2)::before{background:var(--pink)}.tag:nth-child(3n)::before{background:#7bcfb5}
+.d7 .tag{background:#fffaf3}.d7 .tag::before{background:var(--d7-2)}
+.shots .phone{transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+.shots .phone:nth-child(odd){rotate:-1.6deg}.shots .phone:nth-child(even){rotate:1.6deg}
+.shots .phone:hover{transform:translateY(-4px);rotate:0deg}
+.sticker{position:absolute;z-index:3;top:-12px;inset-inline-end:-10px;background:var(--sun);color:var(--ink);font:800 14px Alexandria;padding:8px 14px;border-radius:999px;transform:rotate(8deg);box-shadow:0 8px 18px -8px #0006;white-space:nowrap}
+.d7 .sticker{background:#fff;color:var(--d7)}
+.kid .sticker{background:var(--pink);color:#fff}
+.detail li{border-top-width:3px}
+.detail li b{color:var(--ink)}
+.doo .btn{background:linear-gradient(135deg,var(--doo),#7a2a9c)}
+.d7 .btn{background:linear-gradient(135deg,#2e211a,#6a4430)}
+.kid .btn{background:linear-gradient(135deg,#d2541c,var(--pink))}
+.kid .detail li{border-color:#d2541c}
+
+/* link chip */
+.detail .links{gap:14px;width:100%}
+.chip{display:flex;align-items:center;gap:10px;width:100%;max-width:460px;background:#fff;border-radius:999px;padding:6px;box-shadow:0 10px 28px -18px #3b0f5580}
+.chip .ic{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,var(--doo-2),var(--pink))}
+.d7 .chip .ic{background:linear-gradient(135deg,#6a4430,var(--d7-2))}
+.chip .ic svg{width:17px;height:17px}
+.chip a{flex:1;min-width:0;font:500 13.5px/1.35 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ink);text-decoration:none;overflow-wrap:anywhere;text-align:left}
+.chip a:hover{text-decoration:underline;text-underline-offset:3px}
+.chip .copy{flex:none;border:0;border-radius:999px;padding:9px 16px;background:var(--ink);color:#fff;font:700 13px Alexandria;cursor:pointer;transition:transform .15s,background .2s}
+.chip .copy:hover{transform:translateY(-1px)}.chip .copy:active{transform:scale(.95)}
+.chip .copy.ok{background:#2f9e77}
+
+/* process + close */
+.process{background:radial-gradient(120% 90% at 100% 0%,#5b1f7a 0,#24103a 55%,#1a0d29 100%)}
+.steps div{background:#ffffff10;border:1px solid #ffffff14;backdrop-filter:blur(4px)}
+.steps div:hover{background:#ffffff1a}
+.steps div::before{background:linear-gradient(135deg,var(--sun),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.close>.wrap{background:linear-gradient(135deg,#ffe1cf,#fbd3e4 50%,#e6dcff);border-radius:clamp(30px,4vw,52px);padding:clamp(48px,8vw,110px) clamp(24px,5vw,72px)}
+.close{min-height:auto;padding:clamp(24px,4vw,48px) var(--gut) 72px}
+@media (max-width:560px){.chip{border-radius:22px}.chip a{font-size:12px}.sticker{font-size:12px;padding:6px 11px}}
 </style>
 </head>
 <body>
@@ -147,7 +224,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </div></nav>
 
 <main id="main">
-<section class="hero" id="top"><div class="wrap">
+<section class="hero" id="top"><div class="blobs" aria-hidden="true"><i></i><i></i><i></i></div><div class="wrap">
   <div data-enter>
     <div>
       <p class="eyebrow">أعمال مختارة · تصميم وتطوير</p>
@@ -164,6 +241,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   </div>
 </div></section>
 
+<div class="mqw"><div class="mq" aria-hidden="true"><div class="track"><span>لوّن</span><b>✦</b><span>قلّب الصفحة</span><b>✦</b><span>اكتشف من يختبئ</span><b>✦</b><span>المس الكوب</span><b>✦</b><span>بلا تطبيق</span><b>✦</b><span>من رابط أو QR</span><b>✦</b><span>لوّن</span><b>✦</b><span>قلّب الصفحة</span><b>✦</b><span>اكتشف من يختبئ</span><b>✦</b><span>المس الكوب</span><b>✦</b><span>بلا تطبيق</span><b>✦</b><span>من رابط أو QR</span><b>✦</b></div></div></div>
 <section class="proj doo" id="friends"><div class="wrap">
   <div class="head reveal">
     <div><p class="num">٠١ · ورش DoO</p><h2>ألغاز دوو الملوّنة: لوّن واكشف الشخصية</h2></div>
@@ -171,7 +249,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="tags"><span class="tag">١١ لغزاً</span><span class="tag">تلوين باللمس</span><span class="tag">كشف مجسّم</span><span class="tag">موسيقى خاصة</span><span class="tag">فيديو ترويجي</span></div></div>
   </div>
   <div class="shots">
-    <a class="phone reveal" href="https://laylashams5.github.io/doo-childhood/friends/" target="_blank" rel="noopener" aria-label="غلاف ألغاز دوو"><img src="img/friends-cover.webp" alt="غلاف كتاب ألغاز دوو الملوّنة على الجوال" loading="lazy" width="585" height="1170"></a>
+    <a class="phone reveal" href="https://laylashams5.github.io/doo-childhood/friends/" target="_blank" rel="noopener" aria-label="غلاف ألغاز دوو"><span class="sticker">١١ لغزاً ✦</span><img src="img/friends-cover.webp" alt="غلاف كتاب ألغاز دوو الملوّنة على الجوال" loading="lazy" width="585" height="1170"></a>
     <div class="phone reveal"><img src="img/friends-rules.webp" alt="صفحة طريقة اللعب بشبكة الأرقام" loading="lazy" width="585" height="1170"></div>
     <div class="phone reveal"><video src="img/teaser-sm.mp4" poster="img/teaser.jpg" muted loop playsinline autoplay preload="none" aria-label="ستوري تشويقي لصفحة تتلوّن تدريجياً"></video></div>
     <div class="phone reveal"><img src="img/friends-revealed.webp" alt="شخصية فرشو تظهر مجسّمة بعد حلّ اللغز" loading="lazy" width="585" height="1170"></div>
@@ -185,7 +263,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     </ul>
     <div class="links"><a class="btn" href="https://laylashams5.github.io/doo-childhood/friends/" target="_blank" rel="noopener">افتح الكتاب
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></a>
-      <a class="url" dir="ltr" href="https://laylashams5.github.io/doo-childhood/friends/" target="_blank" rel="noopener">https://laylashams5.github.io/doo-childhood/friends/</a></div>
+      <div class="chip"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></span><a dir="ltr" href="https://laylashams5.github.io/doo-childhood/friends/" target="_blank" rel="noopener">https://laylashams5.github.io/doo-childhood/friends/</a><button type="button" class="copy" data-u="https://laylashams5.github.io/doo-childhood/friends/">نسخ</button></div></div>
   </div>
 </div></section>
 
@@ -196,7 +274,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="tags"><span class="tag">٤ أقسام</span><span class="tag">منتجات مجسّمة</span><span class="tag">سلّة طلب</span><span class="tag">QR للطاولة</span></div></div>
   </div>
   <div class="shots">
-    <a class="phone reveal" href="https://laylashams5.github.io/district7-menu/" target="_blank" rel="noopener" aria-label="غلاف منيو District 7"><img src="img/d7-cover.webp" alt="غلاف منيو District 7 الجلدي" loading="lazy" width="585" height="1170"></a>
+    <a class="phone reveal" href="https://laylashams5.github.io/district7-menu/" target="_blank" rel="noopener" aria-label="غلاف منيو District 7"><span class="sticker">المس وأدِر</span><img src="img/d7-cover.webp" alt="غلاف منيو District 7 الجلدي" loading="lazy" width="585" height="1170"></a>
     <div class="phone reveal"><img src="img/d7-v60.webp" alt="صفحة V60 مع حبوب قهوة متطايرة" loading="lazy" width="585" height="1170"></div>
     <div class="phone reveal"><img src="img/d7-karak.webp" alt="صفحة كرك أولد سكول" loading="lazy" width="585" height="1170"></div>
   </div>
@@ -209,18 +287,19 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     </ul>
     <div class="links"><a class="btn" href="https://laylashams5.github.io/district7-menu/" target="_blank" rel="noopener">افتح المنيو
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></a>
+      <div class="chip"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></span><a dir="ltr" href="https://laylashams5.github.io/district7-menu/" target="_blank" rel="noopener">https://laylashams5.github.io/district7-menu/</a><button type="button" class="copy" data-u="https://laylashams5.github.io/district7-menu/">نسخ</button></div>
       <p class="note">مشروع تجريبي (concept) لمقهى District 7.</p></div>
   </div>
 </div></section>
 
-<section class="proj doo" id="childhood"><div class="wrap three">
+<section class="proj doo kid" id="childhood"><div class="wrap three">
   <div class="head reveal">
     <div><p class="num">٠٣ · ورش DoO</p><h2>العودة للطفولة: كتاب تلوين بطبقات بارزة</h2></div>
     <div><p>كتاب تلوين للكبار يعيد رسوم كرتون الطفولة. يختار الزائر لونه ويلمس المنطقة، فتنتفخ الطبقة الملوّنة وتبرز عن الصفحة.</p>
     <div class="tags"><span class="tag">١١ صفحة</span><span class="tag">طبقات بعمق</span><span class="tag">موسيقى حنين</span></div></div>
   </div>
   <div class="shots">
-    <a class="phone reveal" href="https://laylashams5.github.io/doo-childhood/" target="_blank" rel="noopener" aria-label="غلاف العودة للطفولة"><img src="img/childhood-cover.webp" alt="غلاف كتاب العودة للطفولة" loading="lazy" width="585" height="1170"></a>
+    <a class="phone reveal" href="https://laylashams5.github.io/doo-childhood/" target="_blank" rel="noopener" aria-label="غلاف العودة للطفولة"><span class="sticker">لوّن بإصبعك</span><img src="img/childhood-cover.webp" alt="غلاف كتاب العودة للطفولة" loading="lazy" width="585" height="1170"></a>
     <div class="phone reveal"><img src="img/childhood-line.webp" alt="صفحة بخطوط التلوين قبل البدء" loading="lazy" width="585" height="1170"></div>
     <div class="phone reveal"><img src="img/childhood-colored.webp" alt="الصفحة نفسها بعد التلوين بطبقات بارزة" loading="lazy" width="585" height="1170"></div>
   </div>
@@ -231,7 +310,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     </ul>
     <div class="links"><a class="btn" href="https://laylashams5.github.io/doo-childhood/" target="_blank" rel="noopener">افتح الكتاب
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></a>
-      <a class="url" dir="ltr" href="https://laylashams5.github.io/doo-childhood/" target="_blank" rel="noopener">https://laylashams5.github.io/doo-childhood/</a></div>
+      <div class="chip"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></span><a dir="ltr" href="https://laylashams5.github.io/doo-childhood/" target="_blank" rel="noopener">https://laylashams5.github.io/doo-childhood/</a><button type="button" class="copy" data-u="https://laylashams5.github.io/doo-childhood/">نسخ</button></div></div>
   </div>
 </div></section>
 
@@ -262,6 +341,7 @@ function show(){const h=innerHeight*.9;for(const el of els)if(!el.classList.cont
 addEventListener('scroll',show,{passive:true});addEventListener('resize',show);show();
 const v=document.querySelector('video');
 if(v){new IntersectionObserver(([e])=>{if(e.isIntersecting){v.preload='auto';v.play().catch(()=>{})}else v.pause()}).observe(v)}
+document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(b.dataset.u)}catch(e){const t=document.createElement('textarea');t.value=b.dataset.u;document.body.append(t);t.select();document.execCommand('copy');t.remove()}b.textContent='تم النسخ';b.classList.add('ok');setTimeout(()=>{b.textContent='نسخ';b.classList.remove('ok')},1600)}));
 </script>
 </body>
 </html>
